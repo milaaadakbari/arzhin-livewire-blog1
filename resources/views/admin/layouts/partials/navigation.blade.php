@@ -2,8 +2,13 @@
     <div class="navigation-icon-menu">
         <ul>
             <li data-toggle="tooltip" title="کاربران">
-                <a href="" title=" کاربران">
+                <a href="#users" title=" کاربران">
                     <i class="icon ti-user"></i>
+                </a>
+            </li>
+            <li data-toggle="tooltip" title="مقالات">
+                <a href="#blog" title=" مقالات">
+                    <i class="icon ti-book"></i>
                 </a>
             </li>
         </ul>
@@ -40,5 +45,24 @@
                 </ul>
             </li>
         </ul>
+        <ul id="blog">
+            <li>
+                <a href="#">دسته بندی</a>
+                <ul>
+                    <li><a href="{{route('categories.create')}}">ایجاد دسته بندی</a></li>
+                    <li><a href="{{route('categories.index')}}">لیست دسته بندی</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">مقالات</a>
+                <ul>
+                    <li><a href="#">ایجاد مقاله</a></li>
+                    <li><a href="#">لیست مقالات</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
+
 </div>
+
+
