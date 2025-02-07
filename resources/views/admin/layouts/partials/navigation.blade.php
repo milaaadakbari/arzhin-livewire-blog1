@@ -56,8 +56,8 @@
             <li>
                 <a href="#">مقالات</a>
                 <ul>
-                    <li><a href="#">ایجاد مقاله</a></li>
-                    <li><a href="#">لیست مقالات</a></li>
+                    <li><a href="{{route('articles.create')}}">ایجاد مقاله</a></li>
+                    <li><a href="{{route('articles.index')}}">لیست مقالات</a></li>
                 </ul>
             </li>
         </ul>

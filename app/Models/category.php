@@ -16,6 +16,11 @@ class category extends Model
     {
       return $this->belongsTo(category::class, 'parent_id','id')->withDefault('title');
     }
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+
 
 //    public function childCategory()
 //    {

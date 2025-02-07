@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('panel/vendors/slick/slick.css')}}">
     <link rel="stylesheet" href="{{asset('panel/vendors/slick/slick-theme.css')}}">
     <link rel="stylesheet" href="{{asset('panel/vendors/vmap/jqvmap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('panel/plugins/sweet_alert/sweetalert2.min.css')}}">
     <link rel="stylesheet" href="{{asset('panel/assets/css/app.css')}}" type="text/css">
 </head>
 <body class="small-navigation">
@@ -21,6 +22,8 @@
 <script src="{{asset('panel/vendors/bundle.js')}}"></script>
 <script src="{{asset('panel/vendors/slick/slick.min.js')}}"></script>
 <script src="{{asset('panel/vendors/vmap/jquery.vmap.min.js')}}"></script>
+<script src="{{asset('panel/plugins/sweet_alert/sweetalert2.all.min.js')}}"></script>
 <script src="{{asset('panel/assets/js/app.js')}}"></script>
+@stack('scripts')
 </body>
 </html>

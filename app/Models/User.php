@@ -50,4 +50,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class, 'role_user');
     }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+
 }

@@ -55,6 +55,7 @@ class categoryController extends Controller
 
     public function destroy(string $id)
     {
-        //
+        category::destroy($id);
+        return response()->json(['success'=>'حذف انجام شد']);
     }
 }
