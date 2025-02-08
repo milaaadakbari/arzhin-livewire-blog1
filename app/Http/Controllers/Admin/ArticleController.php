@@ -28,16 +28,20 @@ class ArticleController extends Controller
         return view('admin.articles.create',compact('categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(ArticleRequest $request)
     {
+        $image_name=$request->image->hashName();
+        $request->image->storeAs('images/articles/',$image_name,'public');
+
         Article::query()->create([
-            'title' =>$request->title,
-            'body' =>$request->body,
+            'title' => $request->title,
+            'body' => $request->body,
+            'image'=> $image_name,
+            'user_id'=> auth()->user()->id(),
+            'category_id' => $request->category_id
 
         ]);
+        return redirect()->route('admin.articles.index');
     }
 
     /**

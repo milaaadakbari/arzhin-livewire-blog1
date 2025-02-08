@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-md-3 col-4 text-start">
                         <div class="top-account">
-                            <a href="{{route('register')}}" class="text-dark"><i class="bi bi-person"></i></a>
+                            <a href="{{route('admin.index')}}" class="text-dark"><i class="bi bi-person"></i></a>
                             <a href="{{route('login')}}" class="text-dark"><i class="bi bi-gem"></i></a>
                         </div>
                     </div>

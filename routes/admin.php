@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', PanelController::class);
+Route::get('/', PanelController::class)->name('admin.index');
 Route::resource('users', UserController::class);
 Route::resource('roles', RoleController::class);
 Route::resource('categories', categoryController::class);
