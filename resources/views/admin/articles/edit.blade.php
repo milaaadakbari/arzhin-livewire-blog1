@@ -7,25 +7,34 @@
                     @include('admin.layouts.partials.errors')
 
                     <h4 class="card-title">ویرایش کاربر</h4>
-                    <form method="POST" action="{{route('users.update',$user->id)}}" >
+                    <form method="POST" action="{{route('articles.update',$article->id)}}" >
                         @csrf
                         @method('PUT')
                         <div class="form-group row">
-                            <label  class="col-sm-2 col-form-label">نام و نام خانوادگی</label>
+                            <label  class="col-sm-2 col-form-label">عنوان</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control text-left"  dir="rtl" name="name" value="{{$user->name}}">
+                                <input type="text" class="form-control text-left"  dir="rtl" name="name" value="{{$article->title}}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label  class="col-sm-2 col-form-label">ایمیل</label>
+                            <label class="col-sm-2 col-form-label">دسته بندی</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control text-left" dir="rtl" name="email" value="{{$user->email}}">
+                                <select name="category_id" class="form-control">
+                                    <option value="{{null}}">انتخاب کنید</option>
+                                    @foreach($categories as $key=>$value)
+                                        @if($article->category_id == $key)
+                                            <option selected value="{{$key}}" >{{$value}}</option>
+                                        @else
+                                            <option value="{{$key}}">{{$value}}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label  class="col-sm-2 col-form-label">پسورد</label>
+                            <label class="col-sm-2 col-form-label">متن مقاله</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control text-left" dir="rtl" name="password">
+                                <textarea name="body" class="form-control text-left" rows="5" >{{$article->body}}</textarea>
                             </div>
                         </div>
                         <div class="form-group row">

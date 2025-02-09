@@ -7,7 +7,7 @@
                     @include('admin.layouts.partials.errors')
 
                     <h4 class="card-title">ایجاد مقاله</h4>
-                    <form method="POST" action="{{route('articles.store')}}">
+                    <form method="POST" action="{{route('articles.store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">عنوان مقاله</label>
@@ -30,7 +30,6 @@
                             <label class="col-sm-2 col-form-label">متن مقاله</label>
                             <div class="col-sm-10">
                                 <textarea name="body" class="form-control text-left" rows="5"></textarea>
-                                <input type="text" class="form-control text-left" dir="rtl" name="body">
                             </div>
                         </div>
                         <div class="form-group row">
