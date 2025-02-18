@@ -20,7 +20,7 @@
 
                                 </figure>
                                 <a href="#">
-                                    <h6 class="overflow-hidden px-2">{{$article->title}}</h6>
+                                    <h6  class="overflow-hidden px-2">{{$article->title}}</h6>
                                 </a>
                             </div>
                         @endforeach
