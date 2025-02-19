@@ -1,9 +1,12 @@
 <div class="table overflow-auto" tabindex="8">
-    @include('admin.layouts.partials.message')
+
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">عنوان جستجو</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control text-left" dir="rtl" wire:model="search">
+            <input wire:model="search"
+                   wire:keydown.enter="searchUser"
+{{--                   @keydown.enter="$wire.searchUser"--}}
+                   type="text" class="form-control text-left" dir="rtl" wire:model="search">
         </div>
     </div>
     <table class="table table-striped table-hover">
@@ -18,9 +21,9 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($users as $index => $user)
+        @foreach($this->users as $index => $user)
             <tr>
-                <td class="text-center align-middle">{{$users->firstItem()+$index}}</td>
+                <td class="text-center align-middle">{{$this->users->firstItem()+$index}}</td>
                 <td class="text-center align-middle">{{$user->name}}</td>
                 <td class="text-center align-middle">{{$user->email}}</td>
                 <td class="text-center align-middle">
@@ -40,5 +43,6 @@
     </table>
     <div style="margin: 40px !important;"
          class="pagination pagination-rounded pagination-sm d-flex justify-content-center">
+        {{$this->users->links()}}
     </div>
 </div>

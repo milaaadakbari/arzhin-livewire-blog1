@@ -4,8 +4,10 @@
 <main class="main-content">
     <div class="card">
         <div class="card-body">
-            <livewire:users.user-list/>
+            @include('admin.layouts.partials.message')
+            <livewire:users.user-list lazy/>
         </div>
     </div>
+
 </main>
 @endsection

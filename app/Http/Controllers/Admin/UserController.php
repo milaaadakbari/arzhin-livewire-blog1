@@ -22,10 +22,10 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->all();
-        $data['password'] = Hash::make($request->password);
-        User::query()->create($data);
-        return redirect()->route('users.index')->with('success', 'ثبت با موفقیت انجام شد');
+//        $data = $request->all();
+//        $data['password'] = Hash::make($request->password);
+//        User::query()->create($data);
+//        return redirect()->route('users.index')->with('success', 'ثبت با موفقیت انجام شد');
     }
 
     public function show(string $id)
@@ -35,20 +35,20 @@ class UserController extends Controller
 
     public function edit(string $id)
     {
-        $user = User::query()->findOrFail($id);
-        return view('admin.users.edit', compact('user'));
+
+        return view('admin.users.edit', compact('id'));
     }
 
     public function update(Request $request, string $id)
     {
-        $user = User::query()->findOrFail($id);
-        $user->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password ? Hash::make('$request->password') : $user->password,
-        ]);
-        return redirect()->route('users.index')->with('success', 'ویرایش با موفقیت انجام شد');
-    }
+//        $user = User::query()->findOrFail($id);
+//        $user->update([
+//            'name' => $request->name,
+//            'email' => $request->email,
+//            'password' => $request->password ? Hash::make('$request->password') : $user->password,
+//        ]);
+//        return redirect()->route('users.index')->with('success', 'ویرایش با موفقیت انجام شد');
+   }
 
     public function destroy(string $id)
     {
